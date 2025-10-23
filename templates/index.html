@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Detector</title>
+    <link rel="stylesheet" href='C:/Users/rhyth/ML/Py-DS-ML-Bootcamp-master/spam_email_addresses/static/styles.css'>
+</head>
+<body>
+    <div class="container">
+        <h1>📩 Email Spam Detector</h1>
+        <form action="/predict" method="post">
+            <textarea name="message" placeholder="Enter your email or message..." required>{{ message or '' }}</textarea>
+            <button type="submit">Check Spam</button>
+        </form>
+        {% if prediction_text %}
+            <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
